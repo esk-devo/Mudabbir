@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #3349EB;
+  --dark: #101828;
+  --bg: #f8fafc;
+
+  --red: #FB2C36;
+  --red-soft: #F26969;
+  --red-light: #FEE2E2;
+
+  --green: #36D575;
+  --green-teal: #40C79A;
+  --green-light: #DBFCE7;
+
+  --orange-light: #FFEDD4;
+  --yellow-light: #FEF9C2;
+  --shadow: 0 4px 12px rgba(16, 24, 40, 0.06);
+}
+
+body {
+  background-color: var(--bg);
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 600;
+}
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.sidebar {
+  background-color: white;
+  padding: 24px 16px;
+  display: none;
+  gap: 24px;
+  align-content: start;
+  border-inline-end: 1px solid #E5E7EB;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background-color: var(--primary);
+  display: grid;
+  place-items: center;
+}
+
+.logo-icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.logo h1 {
+  color: var(--dark);
+}
+
+.logo p {
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.nav {
+  display: grid;
+  gap: 8px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  color: #4B5563;
+  text-decoration: none;
+}
+
+.nav-link img {
+  width: 20px;
+  height: 20px;
+}
+
+.nav-link.active {
+  background-color: #EFF6FF;
+  border-color: #DBEAFE;
+  color: var(--primary);
+}
+
+.quick {
+  display: grid;
+  gap: 16px;
+}
+
+.quick h2 {
+  font-size: 14px;
+  color: var(--dark);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #4B5563;
+  text-decoration: none;
+}
+
+.action-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.action-icon img {
+  width: 20px;
+  height: 20px;
+}
+.blue { background-color: #DBEAFE; }
+.green { background-color: var(--green-light); }
+.purple { background-color: #F3E8FF; }
+.orange { background-color: var(--orange-light); }
+
+.main {
+  padding: 16px;
+  display: grid;
+  gap: 24px;
+  align-content: start;
+}
+
+.header {
+  background-color: white;
+  border: 1px solid #F1F5F9;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.status {
+  background-color: var(--green-light);
+  color: var(--green);
+  border: 1px solid #BBF7D0;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+.status::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--green);
+  margin-inline-end: 8px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  inset-inline-end: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--red);
+  color: white;
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 8px 12px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.user h3 {
+  font-size: 16px;
+  color: var(--dark);
+}
+
+.user p {
+  font-size: 12px;
+  color: #6B7280;
+}
+
+
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 80px 1fr;
+  }
+
+  .sidebar {
+    display: grid;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sidebar {
+    padding: 16px 12px;
+    justify-items: center;
+  }
+
+  .sidebar .logo > div:last-child,
+  .nav-link span,
+  .action > span:last-child,
+  .quick h2 {
+    display: none;
+  }
+
+  .nav-link {
+    padding: 12px;
+  }
+
+  .quick {
+    border-top: 1px solid #E5E7EB;
+    padding-top: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 320px 1fr;
+  }
+}
