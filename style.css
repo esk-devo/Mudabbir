@@ -28,12 +28,14 @@ body {
   font-weight: 600;
 }
 
+/* ===== Layout ===== */
 .layout {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
 }
 
+/* ===== Sidebar ===== */
 .sidebar {
   background-color: white;
   padding: 24px 16px;
@@ -130,6 +132,7 @@ body {
   height: 20px;
 }
 
+/* ألوان الخلفيات (مستخدمة في الإجراءات السريعة وأيقونات المعاملات) */
 .blue {
   background-color: #DBEAFE;
 }
@@ -146,7 +149,21 @@ body {
   background-color: var(--orange-light);
 }
 
+.red {
+  background-color: var(--red-light);
+}
+
+.indigo {
+  background-color: #E0E7FF;
+}
+
+.cyan {
+  background-color: #CFFAFE;
+}
+
+/* ===== Main + Header ===== */
 .main {
+  min-width: 0;
   padding: 16px;
   display: grid;
   gap: 24px;
@@ -250,6 +267,7 @@ body {
   color: #6B7280;
 }
 
+/* ===== Stats ===== */
 .stats {
   display: grid;
   grid-template-columns: 1fr;
@@ -297,6 +315,7 @@ body {
   color: var(--red);
 }
 
+/* ===== Content (Cards) ===== */
 .content {
   display: grid;
   grid-template-columns: 1fr;
@@ -304,6 +323,7 @@ body {
 }
 
 .card {
+  min-width: 0;
   background-color: white;
   border: 1px solid #F1F5F9;
   border-radius: 20px;
@@ -319,7 +339,106 @@ body {
   color: var(--dark);
 }
 
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.card-link {
+  text-align: center;
+  color: var(--primary);
+  text-decoration: none;
+  border-top: 1px solid #E5E7EB;
+  padding-top: 16px;
+}
+
+.card-link-sm {
+  color: #4B5563;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* ===== Bills ===== */
+.bills-total {
+  text-align: center;
+  display: grid;
+  gap: 4px;
+}
+
+.bills-total h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.bills-total p {
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.bills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.bill {
+  background-color: #F9FAFB;
+  border: 1px solid #F1F5F9;
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.bill-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 4px;
+}
+
+.bill-icon img {
+  width: 18px;
+  height: 18px;
+}
+
+.bill-name {
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.bill-amount {
+  font-size: 16px;
+  color: var(--dark);
+}
+
+.bill-due {
+  font-size: 13px;
+}
+
+.due-red {
+  color: var(--red);
+}
+
+.due-orange {
+  color: #F97316;
+}
+
+.due-green {
+  color: #16A34A;
+}
+
+.due-gray {
+  color: #6B7280;
+}
+
+/* ===== Activities ===== */
 .activity {
   display: flex;
   align-items: flex-start;
@@ -381,14 +500,141 @@ body {
   font-size: 12px;
 }
 
-.card-link {
-  text-align: center;
-  color: var(--primary);
-  text-decoration: none;
-  border-top: 1px solid #E5E7EB;
-  padding-top: 16px;
+/* ===== Transactions Table ===== */
+.table-wrap {
+  overflow-x: auto;
 }
 
+.table {
+  min-width: 640px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2.2fr 1.4fr 1.4fr 1fr 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.row.head {
+  color: #6B7280;
+  font-size: 14px;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.person h3 {
+  font-size: 15px;
+  color: var(--dark);
+}
+
+.person p {
+  font-size: 13px;
+  color: #6B7280;
+}
+
+.person-img,
+.person-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.person-img {
+  object-fit: cover;
+}
+
+.person-icon {
+  display: grid;
+  place-items: center;
+}
+
+.person-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.pill img {
+  width: 12px;
+  height: 12px;
+}
+
+.pill-green {
+  background-color: var(--green-light);
+  color: #15803D;
+}
+
+.pill-orange {
+  background-color: var(--orange-light);
+  color: #C2410C;
+}
+
+.pill-blue {
+  background-color: #DBEAFE;
+  color: #1D4ED8;
+}
+
+.pill-purple {
+  background-color: #F3E8FF;
+  color: #7E22CE;
+}
+
+.pill-red {
+  background-color: var(--red-light);
+  color: #B91C1C;
+}
+
+.pill-indigo {
+  background-color: #E0E7FF;
+  color: #4338CA;
+}
+
+.pill-cyan {
+  background-color: #CFFAFE;
+  color: #0E7490;
+}
+
+.pill-done {
+  background-color: var(--green-light);
+  color: #15803D;
+}
+
+.pill-pending {
+  background-color: var(--yellow-light);
+  color: #A16207;
+}
+
+.yellow {
+  background-color: var(--yellow-light);
+}
+
+.date {
+  font-size: 14px;
+  color: #4B5563;
+}
+
+.amount {
+  color: var(--dark);
+}
+
+/* ===== Tablet: 768px+ ===== */
 @media (min-width: 768px) {
   .layout {
     grid-template-columns: 80px 1fr;
@@ -409,11 +655,24 @@ body {
   .content {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "activities chart"
+      "activities bills"
       "transactions transactions";
+  }
+
+  .activities {
+    grid-area: activities;
+  }
+
+  .bills {
+    grid-area: bills;
+  }
+
+  .transactions {
+    grid-area: transactions;
   }
 }
 
+/* ===== Tablet only: icons-only sidebar ===== */
 @media (min-width: 768px) and (max-width: 1023px) {
   .sidebar {
     padding: 16px 12px;
@@ -437,15 +696,20 @@ body {
   }
 }
 
+/* ===== Laptop: 1024px+ ===== */
 @media (min-width: 1024px) {
   .layout {
     grid-template-columns: 320px 1fr;
+  }
+
+  .main {
+    padding: 32px;
   }
 
   .content {
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
       "activities transactions"
-      "chart transactions";
+      "bills transactions";
   }
 }
