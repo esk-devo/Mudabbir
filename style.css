@@ -129,10 +129,22 @@ body {
   width: 20px;
   height: 20px;
 }
-.blue { background-color: #DBEAFE; }
-.green { background-color: var(--green-light); }
-.purple { background-color: #F3E8FF; }
-.orange { background-color: var(--orange-light); }
+
+.blue {
+  background-color: #DBEAFE;
+}
+
+.green {
+  background-color: var(--green-light);
+}
+
+.purple {
+  background-color: #F3E8FF;
+}
+
+.orange {
+  background-color: var(--orange-light);
+}
 
 .main {
   padding: 16px;
@@ -238,7 +250,144 @@ body {
   color: #6B7280;
 }
 
+.stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
 
+.stat-card {
+  background-color: white;
+  border: 1px solid #F1F5F9;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: grid;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.stat-change {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.stat-change img {
+  width: 14px;
+  height: 14px;
+}
+
+.up {
+  color: var(--green);
+}
+
+.down {
+  color: var(--red);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #F1F5F9;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.card-title {
+  font-size: 20px;
+  color: var(--dark);
+}
+
+
+.activity {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  border-inline-start: 4px solid;
+}
+
+.activity-blue {
+  background-color: #EFF6FF;
+  border-color: #3B82F6;
+  color: #3B82F6;
+}
+
+.activity-green {
+  background-color: #F0FDF4;
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.activity-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.activity-icon img {
+  width: 16px;
+  height: 16px;
+}
+
+.activity-body {
+  flex: 1;
+  display: grid;
+  gap: 4px;
+}
+
+.activity-body h3 {
+  font-size: 16px;
+  color: var(--dark);
+}
+
+.activity-body p {
+  font-size: 13px;
+  color: #4B5563;
+}
+
+.time {
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.tag {
+  font-size: 12px;
+}
+
+.card-link {
+  text-align: center;
+  color: var(--primary);
+  text-decoration: none;
+  border-top: 1px solid #E5E7EB;
+  padding-top: 16px;
+}
 
 @media (min-width: 768px) {
   .layout {
@@ -252,6 +401,17 @@ body {
     height: 100vh;
     overflow-y: auto;
   }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "activities chart"
+      "transactions transactions";
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -260,9 +420,9 @@ body {
     justify-items: center;
   }
 
-  .sidebar .logo > div:last-child,
+  .sidebar .logo>div:last-child,
   .nav-link span,
-  .action > span:last-child,
+  .action>span:last-child,
   .quick h2 {
     display: none;
   }
@@ -280,5 +440,12 @@ body {
 @media (min-width: 1024px) {
   .layout {
     grid-template-columns: 320px 1fr;
+  }
+
+  .content {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      "activities transactions"
+      "chart transactions";
   }
 }
