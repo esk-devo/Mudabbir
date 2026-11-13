@@ -132,34 +132,14 @@ body {
   height: 20px;
 }
 
-/* ألوان الخلفيات (مستخدمة في الإجراءات السريعة وأيقونات المعاملات) */
-.blue {
-  background-color: #DBEAFE;
-}
-
-.green {
-  background-color: var(--green-light);
-}
-
-.purple {
-  background-color: #F3E8FF;
-}
-
-.orange {
-  background-color: var(--orange-light);
-}
-
-.red {
-  background-color: var(--red-light);
-}
-
-.indigo {
-  background-color: #E0E7FF;
-}
-
-.cyan {
-  background-color: #CFFAFE;
-}
+.blue   { background-color: #DBEAFE; }
+.green  { background-color: var(--green-light); }
+.purple { background-color: #F3E8FF; }
+.orange { background-color: var(--orange-light); }
+.red    { background-color: var(--red-light); }
+.indigo { background-color: #E0E7FF; }
+.cyan   { background-color: #CFFAFE; }
+.pink   { background-color: #FCE7F3; }
 
 /* ===== Main + Header ===== */
 .main {
@@ -307,13 +287,8 @@ body {
   height: 14px;
 }
 
-.up {
-  color: var(--green);
-}
-
-.down {
-  color: var(--red);
-}
+.up   { color: var(--green); }
+.down { color: var(--red); }
 
 /* ===== Content (Cards) ===== */
 .content {
@@ -422,21 +397,10 @@ body {
   font-size: 13px;
 }
 
-.due-red {
-  color: var(--red);
-}
-
-.due-orange {
-  color: #F97316;
-}
-
-.due-green {
-  color: #16A34A;
-}
-
-.due-gray {
-  color: #6B7280;
-}
+.due-red    { color: var(--red); }
+.due-orange { color: #F97316; }
+.due-green  { color: #16A34A; }
+.due-gray   { color: #6B7280; }
 
 /* ===== Activities ===== */
 .activity {
@@ -576,50 +540,15 @@ body {
   height: 12px;
 }
 
-.pill-green {
-  background-color: var(--green-light);
-  color: #15803D;
-}
-
-.pill-orange {
-  background-color: var(--orange-light);
-  color: #C2410C;
-}
-
-.pill-blue {
-  background-color: #DBEAFE;
-  color: #1D4ED8;
-}
-
-.pill-purple {
-  background-color: #F3E8FF;
-  color: #7E22CE;
-}
-
-.pill-red {
-  background-color: var(--red-light);
-  color: #B91C1C;
-}
-
-.pill-indigo {
-  background-color: #E0E7FF;
-  color: #4338CA;
-}
-
-.pill-cyan {
-  background-color: #CFFAFE;
-  color: #0E7490;
-}
-
-.pill-done {
-  background-color: var(--green-light);
-  color: #15803D;
-}
-
-.pill-pending {
-  background-color: var(--yellow-light);
-  color: #A16207;
-}
+.pill-green   { background-color: var(--green-light); color: #15803D; }
+.pill-orange  { background-color: var(--orange-light); color: #C2410C; }
+.pill-blue    { background-color: #DBEAFE; color: #1D4ED8; }
+.pill-purple  { background-color: #F3E8FF; color: #7E22CE; }
+.pill-red     { background-color: var(--red-light); color: #B91C1C; }
+.pill-indigo  { background-color: #E0E7FF; color: #4338CA; }
+.pill-cyan    { background-color: #CFFAFE; color: #0E7490; }
+.pill-done    { background-color: var(--green-light); color: #15803D; }
+.pill-pending { background-color: var(--yellow-light); color: #A16207; }
 
 .yellow {
   background-color: var(--yellow-light);
@@ -659,17 +588,414 @@ body {
       "transactions transactions";
   }
 
-  .activities {
-    grid-area: activities;
-  }
+  .activities   { grid-area: activities; }
+  .bills        { grid-area: bills; }
+  .transactions { grid-area: transactions; }
+}
 
-  .bills {
-    grid-area: bills;
-  }
+/* ===== Bottom row ===== */
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: 16px;
+}
 
-  .transactions {
-    grid-area: transactions;
-  }
+.bottom-col {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 16px;
+}
+
+/* ===== Shared: info text + progress ===== */
+.info {
+  flex: 1;
+  display: grid;
+  gap: 2px;
+}
+
+.info h3 {
+  font-size: 16px;
+  color: var(--dark);
+}
+
+.info p {
+  font-size: 13px;
+  color: #6B7280;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 999px;
+  background-color: #E5E7EB;
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: var(--w);
+  border-radius: 999px;
+}
+
+.fill-blue   { background: linear-gradient(90deg, #3B82F6, #8B5CF6); }
+.fill-orange { background-color: #FF6900; }
+.fill-red    { background-color: #FB2C36; }
+.fill-pink   { background-color: #EC4899; }
+.fill-green  { background-color: #00C950; }
+
+/* ===== Budget ===== */
+.budget-total {
+  background-color: #EFF6FF;
+  border: 1px solid #DBEAFE;
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.budget-total-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.budget-total-label {
+  font-size: 14px;
+  color: var(--primary);
+}
+
+.budget-total-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.budget-left-label {
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.budget-left h3 {
+  font-size: 18px;
+}
+
+.budget-total-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #4B5563;
+}
+
+.category {
+  border: 1px solid #F1F5F9;
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.category-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-side {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+}
+
+.category-side h4 {
+  font-size: 16px;
+  color: var(--dark);
+}
+
+/* ===== Chart ===== */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-size: 14px;
+  color: #4B5563;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.dot-green { background-color: #10B981; }
+.dot-red   { background-color: #EF4444; }
+
+.chart-bars {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-top: 16px;
+}
+
+.bar-group {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.bar-group p {
+  font-size: 13px;
+  color: #4B5563;
+}
+
+.bars {
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.bar {
+  width: 20px;
+  height: var(--h);
+  border-radius: 3px 3px 0 0;
+}
+
+.bar-income  { background-color: #10B981; }
+.bar-expense { background-color: #EF4444; }
+
+/* ===== Account summary ===== */
+.account-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #F9FAFB;
+  border: 1px solid #F1F5F9;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.account-amount {
+  font-size: 16px;
+  color: var(--dark);
+}
+
+/* ===== Payment cards: كلهم Flip ===== */
+.payments {
+  gap: 20px;
+}
+
+.flip {
+  height: 192px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-main {
+  height: 208px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s;
+}
+
+.flip:hover .flip-inner,
+.flip:focus .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  color: white;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* الوش */
+.flip-front {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pay-indigo { background-color: #3730A3; }
+.pay-red    { background-color: #C8003A; }
+.pay-blue   { background-color: #1D3FBF; }
+
+.main-badge {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.pay-top {
+  direction: ltr;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pay-logo {
+  height: 36px;
+}
+
+.logo-box {
+  background-color: white;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.visa-logo {
+  font-size: 14px;
+  font-weight: 800;
+  font-style: italic;
+  color: #1A1F71;
+}
+
+.mc-logo {
+  display: flex;
+  align-items: center;
+}
+
+.mc-logo i {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #EB001B;
+}
+
+.mc-logo i + i {
+  background-color: #F79E1B;
+  margin-inline-start: -10px;
+  opacity: 0.9;
+}
+
+.chip {
+  width: 48px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: grid;
+  place-items: center;
+}
+
+.chip::after {
+  content: "";
+  width: 24px;
+  height: 16px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.card-number {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: right;
+}
+
+.card-foot {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-foot small {
+  display: block;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.card-foot p {
+  font-size: 16px;
+}
+
+.paypal-title {
+  font-size: 22px;
+}
+
+.verified {
+  color: #4ADE80;
+}
+
+/* الضهر */
+.flip-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #060D1F, #1B222E);
+  padding: 20px 16px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.magnetic {
+  height: 28px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #000, #2A2A2A);
+}
+
+.back-note {
+  font-size: 11px;
+  color: #9CA3AF;
+}
+
+.signature {
+  direction: ltr;
+  height: 30px;
+  background-color: #F3F4F6;
+  border-radius: 6px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sig-num,
+.cvv span {
+  font-family: ui-monospace, Consolas, monospace;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.sig-line {
+  flex: 1;
+  height: 14px;
+  background: linear-gradient(90deg, #E5E7EB, #C7CBD1, #E5E7EB);
+  transform: skewX(-20deg);
+}
+
+.cvv {
+  justify-self: end;
+  display: grid;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.cvv span {
+  min-width: 56px;
+  height: 40px;
+  padding: 0 12px;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  border-radius: 6px;
+  font-size: 15px;
 }
 
 /* ===== Tablet only: icons-only sidebar ===== */
@@ -679,9 +1005,9 @@ body {
     justify-items: center;
   }
 
-  .sidebar .logo>div:last-child,
+  .sidebar .logo > div:last-child,
   .nav-link span,
-  .action>span:last-child,
+  .action > span:last-child,
   .quick h2 {
     display: none;
   }
@@ -699,7 +1025,7 @@ body {
 /* ===== Laptop: 1024px+ ===== */
 @media (min-width: 1024px) {
   .layout {
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 256px 1fr;
   }
 
   .main {
